@@ -64,7 +64,7 @@ export default function StickyHeadTable(props) {
                 {props.data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((player) => {
                 return (
                     <TableRow hover role="checkbox" tabIndex={-1} key={player._id}>
-                        <TableCell><Link to={"/players/edit/" + player._id}>{player.name}</Link></TableCell>
+                        <TableCell><Link to={"/players/status/" + player._id}>{player.name}</Link></TableCell>
                         <TableCell>{player.position}</TableCell>
                         <TableCell key={player.name}>
                             {

@@ -9,7 +9,7 @@ import {
 
 const styles = {
     paper: {
-        width: "20rem", padding: "1rem"
+        width: "20rem", padding: "1rem", margin: "auto",
     },
     input: {
         marginBottom: "1rem"

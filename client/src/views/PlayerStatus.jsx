@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import StickyHeadTable from '../components/StickyHeadTable';
 import {Link} from "@reach/router";
 import axios from "axios";
-import { set } from "mongoose";
 
 const PlayerStatus = props => {
 
@@ -45,6 +44,7 @@ const PlayerStatus = props => {
         <Link to={'/status/game/'+1}>Game 1</Link> |
         <Link to={'/status/game/'+2}> Game 2</Link> |
         <Link to={'/status/game/'+3}> Game 3</Link>
+        <h1>Player Status - Game {props.id}</h1>
 
         <StickyHeadTable findAndUpdateStatus={findAndUpdateStatus}  gameId={props.id} fromList={fromList} data={players} oneplayer={oneplayer}/>
         </>

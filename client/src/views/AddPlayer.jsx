@@ -7,7 +7,7 @@ import axios from "axios";
 const initialState = {
     name: '',
     position: '',
-    playStatus: [{game1: ""}, {game2:""}, {game3:""}]
+    playStatus: ["tbd", "tbd", "tbd"]
 };
 
 const AddPlayer = props => {
@@ -29,6 +29,7 @@ const AddPlayer = props => {
 
     return(
         <>
+        <h3>Add a player</h3>
         <PlayerForm callBackOnSubmit={createNewPlayer} initialState={initialState} error={error} btn="Add Player"/>
         </>
     );
