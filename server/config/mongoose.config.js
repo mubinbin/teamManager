@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/player_db', {
+mongoose.connect('mongodb://localhost/team_manager_db', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
