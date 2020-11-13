@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Link} from "@reach/router";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -10,7 +9,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import PopUpBtn from './PopUpBtn';
-import axios from 'axios';
 
 const columns = [
     { id: 'name', label: 'Play Name', minWidth: 100 },
@@ -31,7 +29,6 @@ export default function StickyHeadTable(props) {
     const classes = useStyles();
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
-    const [oneplayer, setOneplayer] = useState({})
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -64,7 +61,7 @@ export default function StickyHeadTable(props) {
                 {props.data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((player) => {
                 return (
                     <TableRow hover role="checkbox" tabIndex={-1} key={player._id}>
-                        <TableCell><Link to={"/players/status/" + player._id}>{player.name}</Link></TableCell>
+                        <TableCell>{player.name}</TableCell>
                         <TableCell>{player.position}</TableCell>
                         <TableCell key={player.name}>
                             {

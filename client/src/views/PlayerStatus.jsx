@@ -9,7 +9,7 @@ const PlayerStatus = props => {
     const [oneplayer, setOneplayer] = useState({})
     const [loaded, setLoaded] = useState(false);
 
-    const fromList = false;
+    const [fromList] = useState(false);
 
     useEffect(()=>{
         axios.get("http://localhost:8000/api/players")
@@ -18,14 +18,14 @@ const PlayerStatus = props => {
             setLoaded(true);
         })
         .catch(err => console.log(err));
-        // return () => {setPlayers([]); setLoaded(false);}
         
     },[loaded]);
 
     const findAndUpdateStatus = (id, status) => {
         axios.get("http://localhost:8000/api/players/"+id)
         .then(res=>{
-            res.data.playStatus[props.id-1] = status;
+            // res.data.playStatus[props.id-1] = status;
+            res.data.playStatus = [...res.data.playStatus.slice(0, props.id-1), status, ...res.data.playStatus.slice(props.id+1)];
             console.log(res.data)
             axios.put("http://localhost:8000/api/players/"+id, res.data)
             .then(res => {
