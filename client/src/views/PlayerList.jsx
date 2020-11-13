@@ -5,7 +5,7 @@ import StickyHeadTable from '../components/StickyHeadTable';
 const PlayerList = props => {
 
     const [players, setPlayers] = useState([]);
-    const [fromList] = useState(true);
+    const fromList = true;
 
     // get all
     useEffect(()=>{

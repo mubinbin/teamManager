@@ -9,7 +9,7 @@ const PlayerStatus = props => {
     const [oneplayer, setOneplayer] = useState({})
     const [loaded, setLoaded] = useState(false);
 
-    const [fromList] = useState(false);
+    const fromList = false;
 
     useEffect(()=>{
         axios.get("http://localhost:8000/api/players")
